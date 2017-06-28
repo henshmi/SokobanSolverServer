@@ -62,6 +62,10 @@ public class SolverServerModel extends Observable implements Model, Observer {
 		case "USERCONNECTED":
 			numOfUsersHandled++;
 			break;
+			
+		case "USERDISCONNECTED":
+			numOfUsersHandled--;
+			break;
 
 		}
 
