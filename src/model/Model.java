@@ -7,4 +7,6 @@ public interface Model {
 	public void stopServer();
 	
 	public int getNumOfUsersHandled();
+	
+	public void setUserAmountThreshold(int threshold);
 }

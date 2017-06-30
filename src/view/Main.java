@@ -19,7 +19,7 @@ public class Main extends Application {
 		try {
 			FXMLLoader fxl = new FXMLLoader(getClass().getResource("/view/MainWindow.fxml"));
 			BorderPane root = fxl.load();
-			Scene scene = new Scene(root,400,100);
+			Scene scene = new Scene(root,427,400);
 			
 			MainWindowController view = fxl.getController();
 			SolverServerModel model = new SolverServerModel();
@@ -30,10 +30,10 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			
 			
-			primaryStage.setMaxHeight(150);
-			primaryStage.setMaxWidth(400);
-			primaryStage.setMinHeight(150);
-			primaryStage.setMinWidth(400);
+			primaryStage.setMaxHeight(420);
+			primaryStage.setMaxWidth(443);
+			primaryStage.setMinHeight(420);
+			primaryStage.setMinWidth(443);
 			
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 				@Override

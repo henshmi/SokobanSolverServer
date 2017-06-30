@@ -54,7 +54,7 @@ public class SolverServerModel extends Observable implements Model, Observer {
 
 		@SuppressWarnings("unchecked")
 		LinkedList<String> params = (LinkedList<String>) arg;
-		String commandKey = params.removeFirst();
+		String commandKey = params.get(0);
 		commandKey = commandKey.toUpperCase();
 		
 		switch (commandKey) {
@@ -62,20 +62,21 @@ public class SolverServerModel extends Observable implements Model, Observer {
 		case "USERCONNECTED":
 			numOfUsersHandled++;
 			break;
-			
-		case "USERDISCONNECTED":
-			numOfUsersHandled--;
-			break;
 
 		}
 
-		LinkedList<String> NotificationForObservers = new LinkedList<>();
 
-		NotificationForObservers.add("USERAMOUNTCHANGED");
 
 		setChanged();
-		notifyObservers(NotificationForObservers);
+		notifyObservers(params);
 
+	}
+	
+	@Override
+	public void setUserAmountThreshold(int threshold){
+		if(server!=null)
+		server.setUserAmountThreshold(threshold);
+		
 	}
 
 	@Override
